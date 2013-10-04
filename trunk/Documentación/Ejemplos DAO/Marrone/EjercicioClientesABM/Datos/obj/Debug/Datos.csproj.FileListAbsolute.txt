@@ -1,0 +1,10 @@
+C:\Personales\Electiva .NET\2013\Ejemplos\ASP\EjercicioClientesABM\Datos\bin\Debug\Datos.dll
+C:\Personales\Electiva .NET\2013\Ejemplos\ASP\EjercicioClientesABM\Datos\bin\Debug\Datos.pdb
+C:\Personales\Electiva .NET\2013\Ejemplos\ASP\EjercicioClientesABM\Datos\obj\Debug\ResolveAssemblyReference.cache
+C:\Personales\Electiva .NET\2013\Ejemplos\ASP\EjercicioClientesABM\Datos\obj\Debug\Datos.dll
+C:\Personales\Electiva .NET\2013\Ejemplos\ASP\EjercicioClientesABM\Datos\obj\Debug\Datos.pdb
+I:\ingenieria\PAV II\Clase 2013-09-19\ABM\EjercicioClientesABM\Datos\bin\Debug\Datos.dll
+I:\ingenieria\PAV II\Clase 2013-09-19\ABM\EjercicioClientesABM\Datos\bin\Debug\Datos.pdb
+I:\ingenieria\PAV II\Clase 2013-09-19\ABM\EjercicioClientesABM\Datos\obj\Debug\ResolveAssemblyReference.cache
+I:\ingenieria\PAV II\Clase 2013-09-19\ABM\EjercicioClientesABM\Datos\obj\Debug\Datos.dll
+I:\ingenieria\PAV II\Clase 2013-09-19\ABM\EjercicioClientesABM\Datos\obj\Debug\Datos.pdb
