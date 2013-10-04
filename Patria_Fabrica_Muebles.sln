@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatriaFabricaMueblesDAO", "PatriaFabricaMueblesDAO\PatriaFabricaMueblesDAO.csproj", "{A1E74A92-F8A2-4CEE-9DEF-79876AB29739}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatriaFabricaMueblesNEG", "PatriaFabricaMueblesNEG\PatriaFabricaMueblesNEG.csproj", "{15B91714-6C0C-4DEC-A889-A48AE3BF3486}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatriaFabricaMueblesOBJ", "PatriaFabricaMueblesOBJ\PatriaFabricaMueblesOBJ.csproj", "{19693E69-524D-4D2E-8115-62F8804B2835}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaPatriaFabricaMueblesDAO", "PruebaPatriaFabricaMueblesDAO\PruebaPatriaFabricaMueblesDAO.csproj", "{65A4B7F9-A89B-4CE2-9A15-C069F0B07A21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3D83714F-BE96-4634-8527-8E8CD5403786}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		Patria_Fabrica_Muebles.vsmdi = Patria_Fabrica_Muebles.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Patria_Fabrica_Muebles.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1E74A92-F8A2-4CEE-9DEF-79876AB29739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1E74A92-F8A2-4CEE-9DEF-79876AB29739}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1E74A92-F8A2-4CEE-9DEF-79876AB29739}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1E74A92-F8A2-4CEE-9DEF-79876AB29739}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B91714-6C0C-4DEC-A889-A48AE3BF3486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B91714-6C0C-4DEC-A889-A48AE3BF3486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B91714-6C0C-4DEC-A889-A48AE3BF3486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B91714-6C0C-4DEC-A889-A48AE3BF3486}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19693E69-524D-4D2E-8115-62F8804B2835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19693E69-524D-4D2E-8115-62F8804B2835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19693E69-524D-4D2E-8115-62F8804B2835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19693E69-524D-4D2E-8115-62F8804B2835}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65A4B7F9-A89B-4CE2-9A15-C069F0B07A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65A4B7F9-A89B-4CE2-9A15-C069F0B07A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65A4B7F9-A89B-4CE2-9A15-C069F0B07A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65A4B7F9-A89B-4CE2-9A15-C069F0B07A21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
