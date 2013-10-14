@@ -8,14 +8,14 @@ namespace PatriaFabricaMuebles.Entidades
     public class UnidadMedida
     {
         #region -- Atributos --
-        int udMedida;
+        int? udMedida;
         string nombre;
         
         #endregion
 
         #region -- Propiedades --
 
-        public int UdMedida
+        public int? UdMedida
         {
             get { return udMedida; }
             set { udMedida = value; }
@@ -41,5 +41,7 @@ namespace PatriaFabricaMuebles.Entidades
         }
         
         #endregion
+
+        public string Abreviactura { get; set; }
     }
 }

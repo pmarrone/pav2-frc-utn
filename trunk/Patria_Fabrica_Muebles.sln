@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Enti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAOTest", "DAOTest\DAOTest.csproj", "{B8409A36-C7F6-4C5C-9B90-5AA142AEE414}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{A9ACB811-5669-4AE1-A39A-7DAA4F16E026}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Patria_Fabrica_Muebles.vsmdi
@@ -35,6 +37,10 @@ Global
 		{B8409A36-C7F6-4C5C-9B90-5AA142AEE414}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8409A36-C7F6-4C5C-9B90-5AA142AEE414}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8409A36-C7F6-4C5C-9B90-5AA142AEE414}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9ACB811-5669-4AE1-A39A-7DAA4F16E026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9ACB811-5669-4AE1-A39A-7DAA4F16E026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9ACB811-5669-4AE1-A39A-7DAA4F16E026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9ACB811-5669-4AE1-A39A-7DAA4F16E026}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
