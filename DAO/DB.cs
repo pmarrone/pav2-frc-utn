@@ -17,6 +17,11 @@ namespace PatriaFabricaMuebles.DAO
             return con;
         }
 
+        public static SqlConnection Conectar()
+        {
+            return Conectar(ConnectionStringManager.ConnectionString);
+        }
+
         public static SqlCommand ArmaCommand(string strSQL, List<SqlParameter> param, SqlConnection con)
         {
             SqlCommand com = new SqlCommand(strSQL, con);

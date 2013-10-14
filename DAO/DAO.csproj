@@ -41,9 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionStringManager.cs" />
+    <Compile Include="UnidadMedidaDAO.cs" />
     <Compile Include="Dal.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="EmpleadoDAO.cs" />
+    <Compile Include="MaterialDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

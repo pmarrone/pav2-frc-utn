@@ -9,16 +9,16 @@ namespace PatriaFabricaMuebles.Entidades
     {
         #region -- Atributos --
 
-        int idMaterial;
+        int? idMaterial;
         string denominacion, caracteristicas;
-        float stockMin, stockReal, stockAsign;
+        Decimal stockMin, stockReal, stockAsign;
         UnidadMedida udMedida;
 
         #endregion
 
         #region -- Propiedades --
 
-        public int IdMaterial
+        public int? IdMaterial
         {
             get { return idMaterial; }
             set { idMaterial = value; }
@@ -36,19 +36,19 @@ namespace PatriaFabricaMuebles.Entidades
             set { caracteristicas = value; }
         }
 
-        public float StockMin
+        public Decimal StockMin
         {
             get { return stockMin; }
             set { stockMin = value; }
         }
 
-        public float StockReal
+        public Decimal StockReal
         {
             get { return stockReal; }
             set { stockReal = value; }
         }
 
-        public float StockAsign
+        public Decimal StockAsign
         {
             get { return stockAsign; }
             set { stockAsign = value; }
@@ -60,6 +60,30 @@ namespace PatriaFabricaMuebles.Entidades
             set { udMedida = value; }
         }
 
+        public string StockRealString
+        {
+            get
+            {
+                return String.Format("{0:0.00}", stockReal) + " " + UdMedida.Abreviactura; 
+            }
+        }
+
+        public string StockAsignString
+        {
+            get
+            {
+                return String.Format("{0:0.00}", StockAsign) + " " + UdMedida.Abreviactura;
+            }
+        }
+
+        public string StockMinString
+        {
+            get
+            {
+                return String.Format("{0:0.00}", StockMin) + " " + UdMedida.Abreviactura;
+            }
+        }
+
         #endregion
 
         #region -- Constructores --
@@ -67,7 +91,7 @@ namespace PatriaFabricaMuebles.Entidades
         public Material()
         { }
 
-        public Material(int pidMaterial, string pdenom, string pcaract, float pstockM, float pstockR, float pstockA, UnidadMedida pudMed)
+        public Material(int pidMaterial, string pdenom, string pcaract, decimal pstockM, decimal pstockR, decimal pstockA, UnidadMedida pudMed)
         {
             idMaterial = pidMaterial;
             denominacion = pdenom;
