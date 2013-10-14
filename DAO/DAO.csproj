@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteDAO.cs" />
     <Compile Include="ConnectionStringManager.cs" />
+    <Compile Include="RolDAO.cs" />
     <Compile Include="UnidadMedidaDAO.cs" />
     <Compile Include="Dal.cs" />
     <Compile Include="DB.cs" />

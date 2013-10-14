@@ -51,9 +51,11 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteDAOTest.cs" />
     <Compile Include="EmpleadoDAOTest.cs" />
     <Compile Include="MaterialDAOTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolDAOTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">
