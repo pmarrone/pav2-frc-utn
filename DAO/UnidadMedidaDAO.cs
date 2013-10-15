@@ -88,7 +88,7 @@ namespace PatriaFabricaMuebles.DAO
             List<UnidadMedida> unidadesMedida = new List<UnidadMedida>();
             Dal.ExecuteReader(query, null, delegate(SqlDataReader reader)
             {
-                if (reader.Read())
+                while (reader.Read())
                 {
                     unidadesMedida.Add(ExtractData(reader));
                 }

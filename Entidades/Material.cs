@@ -11,7 +11,7 @@ namespace PatriaFabricaMuebles.Entidades
 
         int? idMaterial;
         string denominacion, caracteristicas;
-        Decimal stockMin, stockReal, stockAsign;
+        decimal? stockMin, stockReal, stockAsign;
         UnidadMedida udMedida;
 
         #endregion
@@ -36,19 +36,19 @@ namespace PatriaFabricaMuebles.Entidades
             set { caracteristicas = value; }
         }
 
-        public Decimal StockMin
+        public decimal? StockMin
         {
             get { return stockMin; }
             set { stockMin = value; }
         }
 
-        public Decimal StockReal
+        public decimal? StockReal
         {
             get { return stockReal; }
             set { stockReal = value; }
         }
 
-        public Decimal StockAsign
+        public decimal? StockAsign
         {
             get { return stockAsign; }
             set { stockAsign = value; }
