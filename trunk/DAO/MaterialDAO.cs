@@ -127,5 +127,12 @@ namespace PatriaFabricaMuebles.DAO
             return materiales;
         }
 
+
+        public static int Delete(int idMaterial)
+        {
+            Material material = new Material();
+            material.IdMaterial = idMaterial;
+            return Delete(material);
+        }
     }
 }
