@@ -66,7 +66,9 @@ namespace Web
 
         private void LoadMaterialesGridData()
         {
-            List<Material> materiales = MaterialDAO.GetAll();
+            String nombreFiltro = txtNombreFiltro.Text;
+            String stockFiltro = rblStockFiltro.SelectedValue;
+            List<Material> materiales = MaterialDAO.GetByFiltro(nombreFiltro, stockFiltro);
 
             gvMateriales.DataSource = materiales;
             gvMateriales.DataKeyNames = new String[] { "idMaterial" };
@@ -229,6 +231,18 @@ namespace Web
             int idMaterial = (int)ViewState["idMaterial"];
             MaterialDAO.Delete(idMaterial);
             btnCancelar_Click(sender, e);
+            LoadMaterialesGridData();
+        }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            LoadMaterialesGridData();
+        }
+
+        protected void btnLimpiarFiltros_Click(object sender, EventArgs e)
+        {
+            txtNombreFiltro.Text = null;
+            rblStockFiltro.SelectedValue = "todos";
             LoadMaterialesGridData();
         }
     }

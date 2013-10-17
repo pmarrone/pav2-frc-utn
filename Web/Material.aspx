@@ -38,6 +38,10 @@
                     ValidationGroup="crear">
                     Este campo es obligatorio                      
                 </asp:RequiredFieldValidator> 
+                <asp:CustomValidator ID="ctvDenominacion" runat="server"
+                Display="Dynamic" CssClass="col-lg-4 form-control-static text-danger"
+                ErrorMessage="Ya existe un elemento con este nombre">                    
+                </asp:CustomValidator>
             </div>
             
             <div class="form-group">
@@ -122,11 +126,6 @@
                 </asp:CompareValidator>
             </div>
 
-            <div class="form-group">  
-                <div class="col-lg-offset-3 col-lg-9">
-                    
-                </div>
-            </div>
         
         </asp:Panel>
         <div class="form-horizontal col-lg-12 container" role="form" id="pnlBotonCrear" runat="server">
@@ -152,6 +151,52 @@
                 </div>
             </div>
         </div>
+        <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Filtros</h3>
+              </div>
+            <div class="panel-body">
+            <div class="form-horizontal col-lg-12">
+                <div class="form-group">
+                    
+                    <label for="txtNombreFiltro" class="col-lg-1 control-label">
+                        Nombre: 
+                    </label> 
+                    <div class="col-lg-4">
+                        <asp:TextBox ID="txtNombreFiltro" CssClass="form-control" runat="server" 
+                            ValidationGroup="filtros"></asp:TextBox>
+                    </div>   
+                    <div class="col-lg-1">
+                        <asp:Button ID="btnFiltrar" CssClass="btn btn-default" runat="server" 
+                            Text="Filtrar" onclick="btnFiltrar_Click" ValidationGroup="filtros" />
+                    </div>
+                    <div class="col-lg-2">
+                     <asp:Button ID="btnLimpiarFiltros" CssClass="btn btn-default" runat="server" 
+                            Text="Limpiar filtros" onclick="btnLimpiarFiltros_Click" 
+                            ValidationGroup="filtros" />
+                    </div>
+                    
+                   
+                </div>
+                <div class="form-group">
+                    <asp:RadioButtonList ID="rblStockFiltro" runat="server" 
+                    RepeatLayout="Flow" RepeatDirection="Horizontal">
+                    <asp:ListItem Value="todos" class="radio-inline" Selected="True">Todos</asp:ListItem>
+                    <asp:ListItem Value="sinStock" class="radio-inline">Sin stock</asp:ListItem>
+                    <asp:ListItem Value="conStock" class="radio-inline">Con stock</asp:ListItem>
+                    <asp:ListItem Value="sobreMinimo" class="radio-inline">Sobre el mímimo</asp:ListItem>
+                    <asp:ListItem Value="debajoMinimo" class="radio-inline">Debajo minimo</asp:ListItem>
+                </asp:RadioButtonList>
+            
+                </div>
+            </div>
+            
+                
+
+            </div>
+        </div>
+            
+
         <asp:GridView ID="gvMateriales" runat="server" AutoGenerateColumns="False" 
             CssClass="table table-hover table-striped" BorderStyle="None" GridLines="None">
             <Columns>
@@ -160,8 +205,7 @@
                 <asp:BoundField DataField="StockRealString" HeaderText="Stock" />
                 <asp:BoundField DataField="StockAsign" HeaderText="Stock Asignado" />
                 <asp:TemplateField>
-                    <ItemTemplate>
-
+                    <ItemTemplate>                        
                         <asp:LinkButton ID="viewButton" CssClass="glyphicon glyphicon-search" runat="server"
                             CommandArgument='<%# Eval("IdMaterial") %>' CausesValidation="False"
                             OnCommand="viewButton_Command"></asp:LinkButton>
