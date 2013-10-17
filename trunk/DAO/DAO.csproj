@@ -48,6 +48,7 @@
     <Compile Include="Dal.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="EmpleadoDAO.cs" />
+    <Compile Include="MuebleDAO.cs" />
     <Compile Include="MaterialDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -56,6 +57,9 @@
       <Project>{DBC343CA-90DC-4834-879E-A7FB49A953C7}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
