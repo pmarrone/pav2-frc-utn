@@ -134,5 +134,51 @@ namespace PatriaFabricaMuebles.DAO
             material.IdMaterial = idMaterial;
             return Delete(material);
         }
+
+        public static List<Material> GetByFiltro(string nombreFiltro, string stockFiltro)
+        {
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            string query = "SELECT [id_material] "
+                + ",[denominacion] "
+                + ",[caracteristicas] "
+                + ",[stock_minimo] "
+                + ",[stock_real] "
+                + ",[stock_asignado] "
+                + ",[id_ud_medida] "
+                + "FROM [Muebles].[dbo].[Materiales] WHERE 1 = 1 ";
+            if (nombreFiltro != null && !String.Empty.Equals(nombreFiltro))
+            {                
+                nombreFiltro = nombreFiltro.Trim();
+                parameters.Add(new SqlParameter("nombreFiltro", nombreFiltro));
+                query += " AND upper(denominacion) LIKE '%' + upper(@nombreFiltro) + '%' ";
+            }
+            if (stockFiltro != null)
+            {
+                switch (stockFiltro)
+                {
+                    case "conStock":
+                        query += " AND stock_real > 0 ";
+                        break;
+                    case "sinStock":
+                        query += " AND stock_real = 0 ";
+                        break;
+                    case "debajoMinimo":
+                        query += " AND stock_real <= stock_minimo ";
+                        break;
+                    case "sobreMinimo":
+                        query += " AND stock_real > stock_minimo ";
+                        break;
+                }
+            }
+            List<Material> materiales = new List<Material>();
+            Dal.ExecuteReader(query, parameters, delegate(SqlDataReader reader)
+            {
+                while (reader.Read())
+                {
+                    materiales.Add(ExtractData(reader));
+                }
+            });
+            return materiales;
+        }
     }
 }
