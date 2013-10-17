@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using PatriaFabricaMuebles.DAO;
 
 namespace Web
 {
@@ -41,6 +42,15 @@ namespace Web
             // is set to InProc in the Web.config file. If session mode is set to StateServer 
             // or SQLServer, the event is not raised.
 
+        }
+
+        protected void Application_AuthenticateRequest(object sender, EventArgs e)
+        {
+            if (HttpContext.Current.User != null)
+            {
+                var id = HttpContext.Current.User.Identity;
+                HttpContext.Current.User = new System.Security.Principal.GenericPrincipal(id, UsuarioDAO.ObtenerRoles(id.Name));
+            }
         }
 
     }

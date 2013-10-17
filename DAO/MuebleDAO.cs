@@ -22,20 +22,26 @@ namespace PatriaFabricaMuebles.DAO
         /// <Author>fmartina</Author>
         public static int Insert(Mueble pMueble)
         {
-
+            SqlConnection connection = null;
+            SqlTransaction transaction = null;
             try
             {
-                pMueble.IdMueble = InsertMueble(pMueble);
-                InsertMateriales(pMueble);
-                return pMueble.IdMueble;
+                connection  = new SqlConnection(CONNECTION_STRING);
+                connection.Open();
+                transaction = connection.BeginTransaction();
+                pMueble.IdMueble = InsertMueble(pMueble, connection);
+                InsertMateriales(pMueble, connection);
+                transaction.Commit();
+                return pMueble.IdMueble.Value;
             }
             catch (Exception ex)
             {
+                transaction.Rollback();
                 throw ex;
             }
             finally
             {
-
+                connection.Close();
             }
         }
 
@@ -85,7 +91,7 @@ namespace PatriaFabricaMuebles.DAO
                 }
                 MaterialMueble mm = new MaterialMueble();
                 mm.Cantidad = (Int32)reader["cantidad"];
-                mm.MaterialM = material;
+                mm.Material = material;
                 materialMueble.Add(mm);
             }
 
@@ -93,31 +99,39 @@ namespace PatriaFabricaMuebles.DAO
         }
 
 
-        public void DeleteMueble(Mueble pMueble)
+        public static void Delete(Mueble pMueble)
         {
+            SqlConnection connection = null;
+            SqlTransaction transaction = null;
             try
             {
-                DeleteMaterial(pMueble);
-                DeleteMueble(pMueble);
+                connection = new SqlConnection(CONNECTION_STRING);
+                connection.Open();
+                transaction = connection.BeginTransaction();
+                DeleteMaterial(pMueble, connection);
+                DeleteMueble(pMueble, connection);
+                transaction.Commit();
             }
             catch (Exception ex)
             {
+                transaction.Rollback();
                 throw ex;
+
             }
             finally
             {
-
+                connection.Close();
             }
         }
 
-        public static int InsertMueble(Mueble pMueble)
+        private static int InsertMueble(Mueble pMueble, SqlConnection connection)
         {
-            SqlConnection connection = null;
+           
 
             SqlCommand cmd = new SqlCommand();
             try
             {
-                connection = new SqlConnection(CONNECTION_STRING);
+               
 
                 String sql = "insert into Muebles( idTipoMueble, denominacion, caracteristicas, costo, precioVta) OUTPUT Inserted.idMueble "
                     + "values(@IdTipoMueble, @denominacion,@caracteristicas, @costo, @precioVta)";
@@ -133,7 +147,7 @@ namespace PatriaFabricaMuebles.DAO
                 cmd.Parameters.AddWithValue("@costo", pMueble.Costo);
                 cmd.Parameters.AddWithValue("@precioVta", pMueble.PrecioVta);
 
-                connection.Open();
+                
                 int idMagico = (int)cmd.ExecuteScalar();
                 return idMagico;
             }
@@ -144,7 +158,7 @@ namespace PatriaFabricaMuebles.DAO
             finally
             {
                 cmd.Dispose();
-                connection.Close();
+
             }
         }
 
@@ -157,17 +171,14 @@ namespace PatriaFabricaMuebles.DAO
         /// <returns>int</returns>
         /// <Date>2013-10-13</Date>
         /// <Author>fmartina</Author>
-        public static void InsertMateriales(Mueble pMueble)
+        private static void InsertMateriales(Mueble pMueble, SqlConnection connection)
         {
-            SqlConnection connection = null;
 
-            foreach (MaterialMueble materialMueble in pMueble.MaterialMueble)
+            foreach (MaterialMueble materialMueble in pMueble.MaterialesMueble)
             {
                 SqlCommand cmd = new SqlCommand();
                 try
                 {
-                    connection = new SqlConnection(CONNECTION_STRING);
-
                     String sql = "insert into Materiales_Muebles( idMueble, idMaterial, cantidad)values (@pIdMueble,@pIdMaterial,@pCantidad) ";
 
 
@@ -176,29 +187,46 @@ namespace PatriaFabricaMuebles.DAO
                     cmd.CommandType = CommandType.Text;
 
                     cmd.Parameters.AddWithValue("@pIdMueble", pMueble.IdMueble);
-                    cmd.Parameters.AddWithValue("@pIdMaterial", materialMueble.MaterialM.IdMaterial);
+                    cmd.Parameters.AddWithValue("@pIdMaterial", materialMueble.Material.IdMaterial);
                     cmd.Parameters.AddWithValue("@pCantidad", materialMueble.Cantidad);
 
                     connection.Open();
                     cmd.ExecuteNonQuery();
                 }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
                 finally
                 {
                     cmd.Dispose();
-                    connection.Close();
                 }
             }
         }
 
-        public void UpdateMueble(Mueble pMueble)
+        public static void Update(Mueble pMueble)
         {
-            DeleteMaterial(pMueble);
-            Update(pMueble);
-            InsertMateriales(pMueble);
+            SqlConnection connection = null;
+            SqlTransaction transaction = null;
+            try
+            {
+                connection = new SqlConnection(CONNECTION_STRING);
+                connection.Open();
+                transaction = connection.BeginTransaction();
+                DeleteMaterial(pMueble, connection);
+                UpdateMueble(pMueble, connection);
+                InsertMateriales(pMueble, connection);
+                transaction.Commit();
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                throw ex;
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+
         }
 
         /// <summary>
@@ -207,18 +235,14 @@ namespace PatriaFabricaMuebles.DAO
         /// <returns>void</returns>
         /// <Date></Date>
         /// <Author>hcmoreno</Author>
-        public static void Update(Mueble pMueble)
+        private static void UpdateMueble(Mueble pMueble, SqlConnection connection)
         {
-            SqlConnection connection = null;
-            String strCnn;
+            
             SqlCommand cmd = new SqlCommand();
 
             try
             {
-                strCnn = CONNECTION_STRING;
-                connection = new SqlConnection(strCnn);
-
-
+            
               
                 String sql = "update Muebles set idTipoMueble =@idTipoMueble, denominacion = @denominacion, caracteristicas = @caracteristicas, "
                     + "costo = @costo where idMueble=@idMueble";
@@ -233,19 +257,13 @@ namespace PatriaFabricaMuebles.DAO
                 cmd.Parameters.AddWithValue("@costo", pMueble.Costo);
                 cmd.Parameters.AddWithValue("@precioVta", pMueble.PrecioVta);
                 cmd.Parameters.AddWithValue("@idMueble", pMueble.IdMueble);
-
-                connection.Open();
+            
                 cmd.ExecuteNonQuery();
 
-            }
-            catch (Exception ex)
-            {
-                throw ex;
             }
             finally
             {
                 cmd.Dispose();
-                connection.Close();
             }
         }
 
@@ -256,18 +274,15 @@ namespace PatriaFabricaMuebles.DAO
         /// <returns>void</returns>
         /// <Date></Date>
         /// <Author>hcmoreno</Author>
-        public static void Delete(Mueble pMueble)
+        private static void DeleteMueble(Mueble pMueble, SqlConnection connection)
         {
-            SqlConnection connection = null;
-            String strCnn;
+                        
             SqlCommand cmd = new SqlCommand();
 
             SqlCommand cmdMaterial = new SqlCommand();
             try
             {
-                strCnn = CONNECTION_STRING;
-                connection = new SqlConnection(strCnn);
-
+   
 
                 String sql = "delete from Muebles where idMueble=@idMueble";
                 cmdMaterial.CommandText = sql;
@@ -275,8 +290,6 @@ namespace PatriaFabricaMuebles.DAO
                 cmdMaterial.CommandType = CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@idMueble", pMueble.IdMueble);
-                cmd.ExecuteNonQuery();
-                connection.Open();
                 cmd.ExecuteNonQuery();
 
             }
@@ -287,7 +300,6 @@ namespace PatriaFabricaMuebles.DAO
             finally
             {
                 cmd.Dispose();
-                connection.Close();
             }
         }
 
@@ -298,17 +310,12 @@ namespace PatriaFabricaMuebles.DAO
         /// <returns>void</returns>
         /// <Date></Date>
         /// <Author>fmmartina</Author>
-        public static void DeleteMaterial(Mueble pMueble)
+        private static void DeleteMaterial(Mueble pMueble, SqlConnection connection)
         {
-            SqlConnection connection = null;
-            String strCnn;
 
             SqlCommand cmdMaterial = new SqlCommand();
             try
             {
-                strCnn = CONNECTION_STRING;
-                connection = new SqlConnection(strCnn);
-
 
                 String sqlMaterial = "delete from Materiales_Muebles where idMueble=@idMueble";
                 cmdMaterial.CommandText = sqlMaterial;
@@ -316,9 +323,6 @@ namespace PatriaFabricaMuebles.DAO
                 cmdMaterial.CommandType = CommandType.Text;
 
                 cmdMaterial.Parameters.AddWithValue("@idMueble", pMueble.IdMueble);
-
-
-                connection.Open();
                 cmdMaterial.ExecuteNonQuery();
 
             }
@@ -328,7 +332,7 @@ namespace PatriaFabricaMuebles.DAO
             }
             finally
             {
-                connection.Close();
+                cmdMaterial.Dispose();
             }
         }
 
@@ -345,8 +349,14 @@ namespace PatriaFabricaMuebles.DAO
             {
                 connection = new SqlConnection(CONNECTION_STRING);
 
-                String sql = "select idMueble,denominacion, caracteristicas, costo, idtipomueble, preciovta from Muebles";
-
+                String sql =
+                    "SELECT [id_mueble]"
+                    + ", [id_tipo_mueble]"
+                    + ", [denominacion]"
+                    + ", [características]"
+                    + ",[costo]"
+                    + ",[precio_venta]"
+                    + " FROM [Muebles].[dbo].[Muebles]";
 
                 cmd.CommandText = sql;
                 cmd.Connection = connection;
@@ -362,12 +372,13 @@ namespace PatriaFabricaMuebles.DAO
                     oMueble.IdMueble = (Int32)reader["idMueble"];
                     oMueble.Denominacion = (String)reader["Denominacion"];
                     oMueble.Caracteristicas = (String)reader["Caracteristicas"];
-                    oMueble.Costo = (float)reader["costo"];
-                    oMueble.IdTipoMueble = Convert.ToInt32(reader["idTipoMueble"]);
-                    oMueble.PrecioVta = (float)reader["PrecioVta"];
+                    oMueble.Costo = (decimal?)reader["costo"];
+                    TipoMueble tipoMueble = new TipoMueble();
+                    oMueble.IdTipoMueble.IdTipoMueble = Convert.ToInt32(reader["idTipoMueble"]);
+                    oMueble.PrecioVta = (decimal?)reader["PrecioVta"];
                     
                     
-                    oMueble.MaterialMueble = GetByIdMueble(oMueble);
+                    oMueble.MaterialesMueble = GetByIdMueble(oMueble);
 
                     Muebles.Add(oMueble);
                 }
@@ -387,7 +398,7 @@ namespace PatriaFabricaMuebles.DAO
         }
 
 
-        public static Mueble GetById(int id)
+        public static Mueble GetById(int? id)
         {
             SqlDataReader reader = null;
             SqlConnection connection = null;
@@ -413,13 +424,14 @@ namespace PatriaFabricaMuebles.DAO
                     Mueble = new Mueble();
                     Mueble.IdMueble = (Int32)reader["idMueble"];
                     Mueble.Caracteristicas  = (String)reader["Caracteristicas"];
-                    Mueble.Costo = (float)reader["costo"];
+                    Mueble.Costo = (decimal?)reader["costo"];
                     Mueble.Denominacion = (string )reader["Denominacion"];
-                    Mueble.IdTipoMueble = Convert.ToInt32(reader["idTipoMueble"]);
-                    Mueble.PrecioVta=(float )reader ["PrecioVta"];
+                    TipoMueble tipoMueble = new TipoMueble();
+                    Mueble.IdTipoMueble.IdTipoMueble = Convert.ToInt32(reader["idTipoMueble"]);
+                    Mueble.PrecioVta = (decimal?)reader["PrecioVta"];
 
                     List<MaterialMueble> materialmueble = GetByIdMueble(Mueble);
-                    Mueble.MaterialMueble = materialmueble;
+                    Mueble.MaterialesMueble = materialmueble;
                 }
                 return Mueble;
             }
@@ -433,6 +445,13 @@ namespace PatriaFabricaMuebles.DAO
                 connection.Close();
                 reader.Close();
             }
+        }
+
+        public static void Delete(int idMueble)
+        {
+            Mueble mueble = new Mueble();
+            mueble.IdMueble = idMueble;
+            Delete(mueble);
         }
     }
 }

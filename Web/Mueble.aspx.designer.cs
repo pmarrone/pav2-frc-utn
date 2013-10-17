@@ -10,7 +10,7 @@
 namespace Web {
     
     
-    public partial class MaterialPage {
+    public partial class MueblePage {
         
         /// <summary>
         /// pnlCrear control.
@@ -31,67 +31,67 @@ namespace Web {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divIdMaterial;
         
         /// <summary>
-        /// lblIdMaterial control.
+        /// lblId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdMaterial;
+        protected global::System.Web.UI.WebControls.Label lblId;
         
         /// <summary>
-        /// showIdMaterial control.
+        /// showId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label showIdMaterial;
+        protected global::System.Web.UI.WebControls.Label showId;
         
         /// <summary>
-        /// lblDenominacion control.
+        /// lblNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDenominacion;
+        protected global::System.Web.UI.WebControls.Label lblNombre;
         
         /// <summary>
-        /// txtDenominacion control.
+        /// txtNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDenominacion;
+        protected global::System.Web.UI.WebControls.TextBox txtNombre;
         
         /// <summary>
-        /// showDenominacion control.
+        /// showNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label showDenominacion;
+        protected global::System.Web.UI.WebControls.Label showNombre;
         
         /// <summary>
-        /// rfdDenominacion control.
+        /// rfvNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfdDenominacion;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
         
         /// <summary>
-        /// ctvDenominacion control.
+        /// ctvNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator ctvDenominacion;
+        protected global::System.Web.UI.WebControls.CustomValidator ctvNombre;
         
         /// <summary>
         /// lblCaracteristicas control.
@@ -130,130 +130,85 @@ namespace Web {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfdCaracteristicas;
         
         /// <summary>
-        /// lblUnidadMedida control.
+        /// lblTipoMueble control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUnidadMedida;
+        protected global::System.Web.UI.WebControls.Label lblTipoMueble;
         
         /// <summary>
-        /// ddlUnidadMedida control.
+        /// ddlTipoMueble control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlUnidadMedida;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoMueble;
         
         /// <summary>
-        /// showUnidadMedida control.
+        /// showTipoMueble control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label showUnidadMedida;
+        protected global::System.Web.UI.WebControls.Label showTipoMueble;
         
         /// <summary>
-        /// rfdUnidadMedida control.
+        /// rfvTipoMueble control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfdUnidadMedida;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTipoMueble;
         
         /// <summary>
-        /// lblStockReal control.
+        /// lblPrecio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStockReal;
+        protected global::System.Web.UI.WebControls.Label lblPrecio;
         
         /// <summary>
-        /// txtStockReal control.
+        /// txtPrecio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStockReal;
+        protected global::System.Web.UI.WebControls.TextBox txtPrecio;
         
         /// <summary>
-        /// showStockReal control.
+        /// showPrecio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label showStockReal;
+        protected global::System.Web.UI.WebControls.Label showPrecio;
         
         /// <summary>
-        /// rfdStockReal control.
+        /// rfvPrecio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfdStockReal;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPrecio;
         
         /// <summary>
-        /// cmpStockReal control.
+        /// cmpPrecio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator cmpStockReal;
-        
-        /// <summary>
-        /// lblStockMinimo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStockMinimo;
-        
-        /// <summary>
-        /// txtStockMinimo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStockMinimo;
-        
-        /// <summary>
-        /// showStockMinimo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label showStockMinimo;
-        
-        /// <summary>
-        /// rfdStockMinimo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfdStockMinimo;
-        
-        /// <summary>
-        /// cmpStockMinimo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator cmpStockMinimo;
+        protected global::System.Web.UI.WebControls.CompareValidator cmpPrecio;
         
         /// <summary>
         /// pnlBotonCrear control.
@@ -364,12 +319,12 @@ namespace Web {
         protected global::System.Web.UI.WebControls.RadioButtonList rblStockFiltro;
         
         /// <summary>
-        /// gvMateriales control.
+        /// gvMuebles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvMateriales;
+        protected global::System.Web.UI.WebControls.GridView gvMuebles;
     }
 }

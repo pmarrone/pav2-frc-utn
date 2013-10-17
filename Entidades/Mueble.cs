@@ -8,17 +8,29 @@ namespace PatriaFabricaMuebles.Entidades
     public class Mueble
     {
         #region -- Atributos --
-
-        int idMueble;
+        
+        int? idMueble;
+        string denominacion;
+        string caracteristicas;
+        
         TipoMueble idTipoMueble;
-        string denominacion, caracteristicas;
-        float costo, precioVta;
+
+        decimal? costo;
+        decimal? precioVta;
+        List<MaterialMueble> materialesMueble = new List<MaterialMueble>();
+
+        public List<MaterialMueble> MaterialesMueble
+        {
+            get { return materialesMueble; }
+            set { materialesMueble = value; }
+        }
+
 
         #endregion
         
         #region -- Propiedades --
 
-        public int IdMueble
+        public int? IdMueble
         {
             get { return idMueble; }
             set { idMueble = value; }
@@ -41,14 +53,14 @@ namespace PatriaFabricaMuebles.Entidades
             get { return caracteristicas; }
             set { caracteristicas = value; }
         }
- 
-        public float Costo
+
+        public decimal? Costo
         {
             get { return costo; }
             set { costo = value; }
         }
 
-        public float PrecioVta
+        public decimal? PrecioVta
         {
             get { return precioVta; }
             set { precioVta = value; }
@@ -62,7 +74,7 @@ namespace PatriaFabricaMuebles.Entidades
         public Mueble()
         { }
 
-        public Mueble(int pidMueble, TipoMueble pidTipoM, string pdenom, string pcaract, float pcosto, float ppcioVta)
+        public Mueble(int pidMueble, TipoMueble pidTipoM, string pdenom, string pcaract, decimal pcosto, decimal ppcioVta)
         {
             idMueble = pidMueble;
             idTipoMueble = pidTipoM;

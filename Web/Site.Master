@@ -41,19 +41,10 @@
                     </asp:LoginView>
                 </div>
                 <div class="clear hideSkiplink">
-                    <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="False"
-                        IncludeStyleBlock="False" Orientation="Horizontal">
-                        <Items>
-                            <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" />
-                            <asp:MenuItem NavigateUrl="~/About.aspx" Text="About" />
-                            <asp:MenuItem Text="Administración" Value="Administración">
-                                <asp:MenuItem Text="Muebles" Value="Muebles"></asp:MenuItem>
-                                <asp:MenuItem Text="Tipo de Muebles" Value="Tipo de Muebles"></asp:MenuItem>
-                                <asp:MenuItem Text="Materiales" Value="Materiales"></asp:MenuItem>
-                                <asp:MenuItem Text="Unidades de Medida" Value="Unidades de Medida"></asp:MenuItem>
-                                <asp:MenuItem Text="Empleados" Value="Empleados"></asp:MenuItem>
-                            </asp:MenuItem>
-                        </Items>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
+
+                    <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
+                                        IncludeStyleBlock="false" Orientation="Horizontal" DataSourceID="SiteMapDataSource1">                 
                     </asp:Menu>
                 </div>
             </div>

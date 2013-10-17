@@ -10,7 +10,7 @@
 namespace Web {
     
     
-    public partial class MaterialPage {
+    public partial class EmpleadoPage {
         
         /// <summary>
         /// pnlCrear control.
@@ -22,31 +22,58 @@ namespace Web {
         protected global::System.Web.UI.WebControls.Panel pnlCrear;
         
         /// <summary>
-        /// divIdMaterial control.
+        /// divId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divIdMaterial;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divId;
         
         /// <summary>
-        /// lblIdMaterial control.
+        /// lblLegajo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdMaterial;
+        protected global::System.Web.UI.WebControls.Label lblLegajo;
         
         /// <summary>
-        /// showIdMaterial control.
+        /// txtLegajo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label showIdMaterial;
+        protected global::System.Web.UI.WebControls.TextBox txtLegajo;
+        
+        /// <summary>
+        /// showLegajo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label showLegajo;
+        
+        /// <summary>
+        /// lblNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNombre;
+        
+        /// <summary>
+        /// txtNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNombre;
         
         /// <summary>
         /// lblDenominacion control.
@@ -58,202 +85,175 @@ namespace Web {
         protected global::System.Web.UI.WebControls.Label lblDenominacion;
         
         /// <summary>
-        /// txtDenominacion control.
+        /// rfvNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDenominacion;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
         
         /// <summary>
-        /// showDenominacion control.
+        /// lblApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label showDenominacion;
+        protected global::System.Web.UI.WebControls.Label lblApellido;
         
         /// <summary>
-        /// rfdDenominacion control.
+        /// txtApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfdDenominacion;
+        protected global::System.Web.UI.WebControls.TextBox txtApellido;
         
         /// <summary>
-        /// ctvDenominacion control.
+        /// showApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator ctvDenominacion;
+        protected global::System.Web.UI.WebControls.Label showApellido;
         
         /// <summary>
-        /// lblCaracteristicas control.
+        /// rfvApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCaracteristicas;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvApellido;
         
         /// <summary>
-        /// txtCaracteristicas control.
+        /// lblRol control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCaracteristicas;
+        protected global::System.Web.UI.WebControls.Label lblRol;
         
         /// <summary>
-        /// showCaracteristicas control.
+        /// ddlRol control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label showCaracteristicas;
+        protected global::System.Web.UI.WebControls.DropDownList ddlRol;
         
         /// <summary>
-        /// rfdCaracteristicas control.
+        /// showRol control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfdCaracteristicas;
+        protected global::System.Web.UI.WebControls.Label showRol;
         
         /// <summary>
-        /// lblUnidadMedida control.
+        /// rfvRol control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUnidadMedida;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvRol;
         
         /// <summary>
-        /// ddlUnidadMedida control.
+        /// lblDNI control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlUnidadMedida;
+        protected global::System.Web.UI.WebControls.Label lblDNI;
         
         /// <summary>
-        /// showUnidadMedida control.
+        /// txtDNI control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label showUnidadMedida;
+        protected global::System.Web.UI.WebControls.TextBox txtDNI;
         
         /// <summary>
-        /// rfdUnidadMedida control.
+        /// showDNI control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfdUnidadMedida;
+        protected global::System.Web.UI.WebControls.Label showDNI;
         
         /// <summary>
-        /// lblStockReal control.
+        /// rfvDNI control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStockReal;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDNI;
         
         /// <summary>
-        /// txtStockReal control.
+        /// cmpDNI control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStockReal;
+        protected global::System.Web.UI.WebControls.CompareValidator cmpDNI;
         
         /// <summary>
-        /// showStockReal control.
+        /// lblFechaIngreso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label showStockReal;
+        protected global::System.Web.UI.WebControls.Label lblFechaIngreso;
         
         /// <summary>
-        /// rfdStockReal control.
+        /// txtFechaIngreso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfdStockReal;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaIngreso;
         
         /// <summary>
-        /// cmpStockReal control.
+        /// showFechaIngreso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator cmpStockReal;
+        protected global::System.Web.UI.WebControls.Label showFechaIngreso;
         
         /// <summary>
-        /// lblStockMinimo control.
+        /// rfvFechaIngreso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStockMinimo;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFechaIngreso;
         
         /// <summary>
-        /// txtStockMinimo control.
+        /// cmpFechaIngreso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStockMinimo;
-        
-        /// <summary>
-        /// showStockMinimo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label showStockMinimo;
-        
-        /// <summary>
-        /// rfdStockMinimo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfdStockMinimo;
-        
-        /// <summary>
-        /// cmpStockMinimo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator cmpStockMinimo;
+        protected global::System.Web.UI.WebControls.CompareValidator cmpFechaIngreso;
         
         /// <summary>
         /// pnlBotonCrear control.

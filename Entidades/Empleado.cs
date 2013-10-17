@@ -17,6 +17,7 @@ namespace PatriaFabricaMuebles.Entidades
         DateTime fechaBaja;
         string apellido; 
         String nombre;
+        Usuario usuario;
 
         #endregion
 

@@ -1,44 +1,41 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
-    CodeBehind="Material.aspx.cs" Inherits="Web.MaterialPage" MaintainScrollPositionOnPostback="true"%>
+    CodeBehind="Mueble.aspx.cs" Inherits="Web.MueblePage" MaintainScrollPositionOnPostback="true"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    
-
-
         <asp:Panel ID="pnlCrear" runat="server" 
             CssClass="form-horizontal col-lg-12 container" role="form" Visible="False">
             
             <div class="form-group" runat="server" id="divIdMaterial">
                 <label class="col-lg-2 control-label">
-                    <asp:Label ID="lblIdMaterial" runat="server" Text="Id."></asp:Label>
+                    <asp:Label ID="lblId" runat="server" Text="Id."></asp:Label>
                 </label>
                 
                 <div class="col-lg-5">    
-                    <asp:Label ID="showIdMaterial" runat="server" CssClass="form-control">                    
+                    <asp:Label ID="showId" runat="server" CssClass="form-control">                    
                     </asp:Label>                        
                 </div>                
             </div>
             <div class="form-group">
-                <label for="txtDenominacion" class="col-lg-2 control-label">
-                    <asp:Label ID="lblDenominacion" runat="server" Text="Denominacion"></asp:Label>
+                <label for="txtNombre" class="col-lg-2 control-label">
+                    <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
                 </label>
                 
                 <div class="col-lg-5">    
-                        <asp:TextBox ID="txtDenominacion" runat="server" ClientIDMode="Static" 
+                        <asp:TextBox ID="txtNombre" runat="server" ClientIDMode="Static" 
                             CssClass="form-control " ValidationGroup="crear">
                             </asp:TextBox> 
-                        <asp:Label ID="showDenominacion" CssClass="form-control" runat="server"></asp:Label>
+                        <asp:Label ID="showNombre" CssClass="form-control" runat="server"></asp:Label>
                 </div>
                 
-                <asp:RequiredFieldValidator ID="rfdDenominacion" runat="server" 
-                    ControlToValidate="txtDenominacion" 
+                <asp:RequiredFieldValidator ID="rfvNombre" runat="server" 
+                    ControlToValidate="txtNombre" 
                     Display="Dynamic" CssClass="col-lg-4 form-control-static text-danger" 
                     ValidationGroup="crear">
                     Este campo es obligatorio                      
                 </asp:RequiredFieldValidator> 
-                <asp:CustomValidator ID="ctvDenominacion" runat="server"
+                <asp:CustomValidator ID="ctvNombre" runat="server"
                 Display="Dynamic" CssClass="col-lg-4 form-control-static text-danger"
                 ErrorMessage="Ya existe un elemento con este nombre">                    
                 </asp:CustomValidator>
@@ -62,77 +59,50 @@
             </div>
 
             <div class="form-group">
-                <label for="ddlUnidadMedida" class="col-lg-2 control-label">
-                    <asp:Label ID="lblUnidadMedida" runat="server" Text="U. de Medida"></asp:Label>
+                <label for="ddlTipoMueble" class="col-lg-2 control-label">
+                    <asp:Label ID="lblTipoMueble" runat="server" Text="Tipo de Mueble"></asp:Label>
                 </label>
                 <div class="col-lg-5">
-                     <asp:DropDownList ID="ddlUnidadMedida" runat="server" ClientIDMode="Static" 
+                     <asp:DropDownList ID="ddlTipoMueble" runat="server" ClientIDMode="Static" 
                          CssClass="form-control "></asp:DropDownList>
-                    <asp:Label ID="showUnidadMedida" CssClass="form-control" runat="server"></asp:Label>
+                    <asp:Label ID="showTipoMueble" CssClass="form-control" runat="server"></asp:Label>
                 </div>
-                <asp:RequiredFieldValidator ID="rfdUnidadMedida" runat="server" 
-                    ControlToValidate="ddlUnidadMedida" 
-                    ErrorMessage="El campo Unidad de Medida es obligatorio" 
+                <asp:RequiredFieldValidator ID="rfvTipoMueble" runat="server" 
+                    ControlToValidate="ddlTipoMueble"        
                     CssClass="col-lg-4 form-control-static text-danger" Display="Dynamic" 
                     ValidationGroup="crear">
                         Este campo es obligatorio 
                 </asp:RequiredFieldValidator>
             </div>
-            <div class="form-group">
-                <label for="txtStockReal" class="col-lg-2 control-label">
-                    <asp:Label ID="lblStockReal" runat="server" Text="Stock"></asp:Label>
+             <div class="form-group">
+                <label for="txtPrecio" class="col-lg-2 control-label">
+                    <asp:Label ID="lblPrecio" runat="server" Text="Precio"></asp:Label>
                 </label>
                 <div class="col-lg-5">
-                     <asp:TextBox ID="txtStockReal" runat="server" ClientIDMode="Static" 
+                     <asp:TextBox ID="txtPrecio" runat="server" ClientIDMode="Static" 
                          CssClass="form-control "></asp:TextBox>
-                    <asp:Label ID="showStockReal" CssClass="form-control" runat="server"></asp:Label>
+                    <asp:Label ID="showPrecio" CssClass="form-control" runat="server"></asp:Label>
                 </div>
-                <asp:RequiredFieldValidator ID="rfdStockReal" runat="server" 
-                    ControlToValidate="txtStockReal" 
-                    ErrorMessage="El campo Unidad de Medida es obligatorio" 
+                <asp:RequiredFieldValidator ID="rfvPrecio" runat="server" 
+                    ControlToValidate="txtPrecio" 
                     CssClass="col-lg-4 form-control-static text-danger" Display="Dynamic" 
                     ValidationGroup="crear">
                         Este campo es obligatorio 
                 </asp:RequiredFieldValidator>
-                <asp:CompareValidator ID="cmpStockReal" runat="server" 
-                    CssClass="col-lg-4 form-control-static text-danger" Operator="DataTypeCheck" 
-                    Type="Double" ControlToValidate="txtStockReal" Display="Dynamic" 
-                    ValidationGroup="crear">
-                    El valor ingresado debe ser un número
-                </asp:CompareValidator>
-            </div>
-            
-            <div class="form-group">
-                <label for="txtStockMinimo" class="col-lg-2 control-label">
-                    <asp:Label ID="lblStockMinimo" runat="server" Text="Stock Mínimo"></asp:Label>
-                </label>
-                <div class="col-lg-5">
-                     <asp:TextBox ID="txtStockMinimo" runat="server" ClientIDMode="Static" 
-                         CssClass="form-control "></asp:TextBox>
-                    <asp:Label ID="showStockMinimo" CssClass="form-control" runat="server"></asp:Label>
-                </div>
-                <asp:RequiredFieldValidator ID="rfdStockMinimo" runat="server" 
-                    ControlToValidate="txtStockMinimo" 
-                    ErrorMessage="El campo Unidad de Medida es obligatorio" 
-                    CssClass="col-lg-4 form-control-static text-danger" Display="Dynamic" 
-                    ValidationGroup="crear">
-                        Este campo es obligatorio 
-                </asp:RequiredFieldValidator>
-                <asp:CompareValidator ID="cmpStockMinimo" runat="server" 
-                    ControlToValidate="txtStockMinimo" 
+                <asp:CompareValidator ID="cmpPrecio" runat="server" 
+                    ControlToValidate="txtPrecio" 
                     CssClass="col-lg-4 form-control-static text-danger" Display="Dynamic" 
                     Operator="DataTypeCheck" Type="Double" ValidationGroup="crear">
                     El valor ingresado debe ser un número
                 </asp:CompareValidator>
             </div>
 
-        
         </asp:Panel>
         <div class="form-horizontal col-lg-12 container" role="form" id="pnlBotonCrear" runat="server">
             <div class="form-group">
                 <div class="col-lg-9">
                     <asp:Button ID="btnNuevo" CssClass="btn btn-primary" runat="server" 
-                        Text="Nuevo Material" onclick="btnNuevo_Click" CausesValidation="False"/>                        
+                        Text="Nuevo Mueble" onclick="btnNuevo_Click" CausesValidation="False"/>                        
                     <asp:Button ID="btnCrear" CssClass="btn btn-primary" runat="server" 
                         Text="Crear" onclick="btnCrear_Click" ValidationGroup="crear" 
                         Visible="False" />
@@ -147,7 +117,6 @@
                         Text="Cancelar" onclick="btnCancelar_Click" Visible="False" />
                     <asp:Button ID="btnCerrar" CssClass="btn btn-default" runat="server" 
                         Text="Cerrar" Visible="False" onclick="btnCancelar_Click" />
-                    
                 </div>
             </div>
         </div>
@@ -197,7 +166,7 @@
         </div>
             
 
-        <asp:GridView ID="gvMateriales" runat="server" AutoGenerateColumns="False" 
+        <asp:GridView ID="gvMuebles" runat="server" AutoGenerateColumns="False" 
             CssClass="table table-hover table-striped" BorderStyle="None" GridLines="None">
             <Columns>
                 <asp:BoundField DataField="Denominacion" HeaderText="Nombre" />
