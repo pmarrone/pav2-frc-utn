@@ -10,51 +10,60 @@
 namespace Web {
     
     
-    public partial class SiteMaster {
+    public partial class WebForm2 {
         
         /// <summary>
-        /// HeadContent control.
+        /// UserNameLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
+        protected global::System.Web.UI.WebControls.Label UserNameLabel;
         
         /// <summary>
-        /// HeadLoginView control.
+        /// UserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginView HeadLoginView;
+        protected global::System.Web.UI.WebControls.TextBox UserName;
         
         /// <summary>
-        /// SiteMapDataSource1 control.
+        /// PasswordLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SiteMapDataSource SiteMapDataSource1;
+        protected global::System.Web.UI.WebControls.Label PasswordLabel;
         
         /// <summary>
-        /// NavigationMenu control.
+        /// Password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu NavigationMenu;
+        protected global::System.Web.UI.WebControls.TextBox Password;
         
         /// <summary>
-        /// MainContent control.
+        /// lblerror control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Label lblerror;
+        
+        /// <summary>
+        /// btnValidar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnValidar;
     }
 }

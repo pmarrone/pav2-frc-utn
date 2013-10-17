@@ -9,7 +9,7 @@ using PatriaFabricaMuebles.DAO;
 
 namespace Web
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class MaterialPage : System.Web.UI.Page
     {
         protected bool FormEditable
         {

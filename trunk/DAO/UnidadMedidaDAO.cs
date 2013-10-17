@@ -9,7 +9,24 @@ namespace PatriaFabricaMuebles.DAO
 {
     public class UnidadMedidaDAO
     {
+        private static List<SqlParameter> LoadParameters(UnidadMedida item)
+        {
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("id_ud_medida", item.UdMedida));
+            parameters.Add(new SqlParameter("nombre", item.Nombre));
+            parameters.Add(new SqlParameter("abreviatura", item.Abreviactura));
+            return parameters;
+        }
 
+        private static UnidadMedida ExtractData(SqlDataReader reader)
+        {
+            UnidadMedida unidadMedida = new UnidadMedida();
+            unidadMedida.UdMedida = (int?)reader["id_ud_medida"];
+            unidadMedida.Nombre = (string)reader["nombre"];
+            unidadMedida.Abreviactura = (string)reader["abreviatura"];
+
+            return unidadMedida;
+        }
 
         public static int? Insert(UnidadMedida item)
         {
@@ -24,14 +41,7 @@ namespace PatriaFabricaMuebles.DAO
             return (int?)Dal.ExecuteScalar(query, LoadParameters(item));
         }
 
-        private static List<SqlParameter> LoadParameters(UnidadMedida item)
-        {
-            List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("id_ud_medida", item.UdMedida));
-            parameters.Add(new SqlParameter("nombre", item.Nombre));
-            parameters.Add(new SqlParameter("abreviatura",  item.Abreviactura));
-            return parameters;
-        }
+
 
         public static int Delete(UnidadMedida item)
         {
@@ -69,15 +79,7 @@ namespace PatriaFabricaMuebles.DAO
             return unidadMedida;
         }
 
-        private static UnidadMedida ExtractData(SqlDataReader reader)
-        {
-            UnidadMedida unidadMedida = new UnidadMedida();
-            unidadMedida.UdMedida = (int?)reader["id_ud_medida"];
-            unidadMedida.Nombre = (string)reader["nombre"];
-            unidadMedida.Abreviactura = (string)reader["abreviatura"];
-           
-            return unidadMedida;
-        }
+
 
         public static List<UnidadMedida> GetAll()
         {

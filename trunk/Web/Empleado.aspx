@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
-    CodeBehind="Material.aspx.cs" Inherits="Web.MaterialPage" MaintainScrollPositionOnPostback="true"%>
+    CodeBehind="Empleado.aspx.cs" Inherits="Web.WebForm2" MaintainScrollPositionOnPostback="true"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 
 </asp:Content>
@@ -10,51 +10,50 @@
         <asp:Panel ID="pnlCrear" runat="server" 
             CssClass="form-horizontal col-lg-12 container" role="form" Visible="False">
             
-            <div class="form-group" runat="server" id="divIdMaterial">
-                <label class="col-lg-2 control-label">
-                    <asp:Label ID="lblIdMaterial" runat="server" Text="Id."></asp:Label>
+            <div class="form-group" runat="server" id="divId">
+                <label for="txtLegajo" class="col-lg-2 control-label">
+                    <asp:Label ID="lblLegajo" runat="server" Text="Legajo:"></asp:Label>
                 </label>
-                
+                <asp:TextBox ID="txtLegajo" runat="server" ClientIDMode="Static" 
+                            CssClass="form-control " ValidationGroup="crear">
+                </asp:TextBox> 
                 <div class="col-lg-5">    
-                    <asp:Label ID="showIdMaterial" runat="server" CssClass="form-control">                    
+                    <asp:Label ID="showLegajo" runat="server" CssClass="form-control">                    
                     </asp:Label>                        
                 </div>                
             </div>
             <div class="form-group">
-                <label for="txtDenominacion" class="col-lg-2 control-label">
-                    <asp:Label ID="lblDenominacion" runat="server" Text="Denominacion"></asp:Label>
+                <label for="txtNombre" class="col-lg-2 control-label">
+                    <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
                 </label>
                 
                 <div class="col-lg-5">    
-                        <asp:TextBox ID="txtDenominacion" runat="server" ClientIDMode="Static" 
-                            CssClass="form-control " ValidationGroup="crear">
-                            </asp:TextBox> 
-                        <asp:Label ID="showDenominacion" CssClass="form-control" runat="server"></asp:Label>
+                    <asp:TextBox ID="txtNombre" runat="server" ClientIDMode="Static" 
+                        CssClass="form-control " ValidationGroup="crear">
+                        </asp:TextBox> 
+                    <asp:Label ID="lblDenominacion" CssClass="form-control" runat="server"></asp:Label>
                 </div>
                 
-                <asp:RequiredFieldValidator ID="rfdDenominacion" runat="server" 
-                    ControlToValidate="txtDenominacion" 
+                <asp:RequiredFieldValidator ID="rfvNombre" runat="server" 
+                    ControlToValidate="txtNombre" 
                     Display="Dynamic" CssClass="col-lg-4 form-control-static text-danger" 
                     ValidationGroup="crear">
                     Este campo es obligatorio                      
                 </asp:RequiredFieldValidator> 
-                <asp:CustomValidator ID="ctvDenominacion" runat="server"
-                Display="Dynamic" CssClass="col-lg-4 form-control-static text-danger"
-                ErrorMessage="Ya existe un elemento con este nombre">                    
-                </asp:CustomValidator>
+
             </div>
             
             <div class="form-group">
-                <label for="txtCaracteristicas" class="col-lg-2 control-label">
-                    <asp:Label ID="lblCaracteristicas" runat="server" Text="Características"></asp:Label>
+                <label for="txtApellido" class="col-lg-2 control-label">
+                    <asp:Label ID="lblApellido" runat="server" Text="Apellido"></asp:Label>
                 </label>
                 <div class="col-lg-5">
-                    <asp:TextBox ID="txtCaracteristicas" runat="server" TextMode="MultiLine" 
+                    <asp:TextBox ID="txtApellido" runat="server" 
                         ClientIDMode="Static" CssClass="form-control "></asp:TextBox>
-                    <asp:Label ID="showCaracteristicas" CssClass="form-control" runat="server"></asp:Label>
+                    <asp:Label ID="showApellido" CssClass="form-control" runat="server"></asp:Label>
                 </div>
-                <asp:RequiredFieldValidator ID="rfdCaracteristicas" runat="server" 
-                    ControlToValidate="txtCaracteristicas" 
+                <asp:RequiredFieldValidator ID="rfvApellido" runat="server" 
+                    ControlToValidate="txtApellido" 
                     CssClass="col-lg-4 form-control-static text-danger" Display="Dynamic" 
                     ValidationGroup="crear">
                     Este campo es obligatorio   
@@ -62,66 +61,63 @@
             </div>
 
             <div class="form-group">
-                <label for="ddlUnidadMedida" class="col-lg-2 control-label">
-                    <asp:Label ID="lblUnidadMedida" runat="server" Text="U. de Medida"></asp:Label>
+                <label for="ddlRol" class="col-lg-2 control-label">
+                    <asp:Label ID="lblRol" runat="server" Text="Rol"></asp:Label>
                 </label>
                 <div class="col-lg-5">
-                     <asp:DropDownList ID="ddlUnidadMedida" runat="server" ClientIDMode="Static" 
+                     <asp:DropDownList ID="ddlRol" runat="server" ClientIDMode="Static" 
                          CssClass="form-control "></asp:DropDownList>
-                    <asp:Label ID="showUnidadMedida" CssClass="form-control" runat="server"></asp:Label>
+                    <asp:Label ID="showRol" CssClass="form-control" runat="server"></asp:Label>
                 </div>
-                <asp:RequiredFieldValidator ID="rfdUnidadMedida" runat="server" 
-                    ControlToValidate="ddlUnidadMedida" 
-                    ErrorMessage="El campo Unidad de Medida es obligatorio" 
+                <asp:RequiredFieldValidator ID="rfvRol" runat="server" 
+                    ControlToValidate="ddlRol" 
                     CssClass="col-lg-4 form-control-static text-danger" Display="Dynamic" 
                     ValidationGroup="crear">
                         Este campo es obligatorio 
                 </asp:RequiredFieldValidator>
             </div>
             <div class="form-group">
-                <label for="txtStockReal" class="col-lg-2 control-label">
-                    <asp:Label ID="lblStockReal" runat="server" Text="Stock"></asp:Label>
+                <label for="txtDNI" class="col-lg-2 control-label">
+                    <asp:Label ID="lblDNI" runat="server" Text="Stock"></asp:Label>
                 </label>
                 <div class="col-lg-5">
-                     <asp:TextBox ID="txtStockReal" runat="server" ClientIDMode="Static" 
+                     <asp:TextBox ID="txtDNI" runat="server" ClientIDMode="Static" 
                          CssClass="form-control "></asp:TextBox>
-                    <asp:Label ID="showStockReal" CssClass="form-control" runat="server"></asp:Label>
+                    <asp:Label ID="showDNI" CssClass="form-control" runat="server"></asp:Label>
                 </div>
-                <asp:RequiredFieldValidator ID="rfdStockReal" runat="server" 
-                    ControlToValidate="txtStockReal" 
-                    ErrorMessage="El campo Unidad de Medida es obligatorio" 
+                <asp:RequiredFieldValidator ID="rfvDNI" runat="server" 
+                    ControlToValidate="txtDNI" 
                     CssClass="col-lg-4 form-control-static text-danger" Display="Dynamic" 
                     ValidationGroup="crear">
                         Este campo es obligatorio 
                 </asp:RequiredFieldValidator>
-                <asp:CompareValidator ID="cmpStockReal" runat="server" 
+                <asp:CompareValidator ID="cmpDNI" runat="server" 
                     CssClass="col-lg-4 form-control-static text-danger" Operator="DataTypeCheck" 
-                    Type="Double" ControlToValidate="txtStockReal" Display="Dynamic" 
+                    Type="Double" ControlToValidate="txtDNI" Display="Dynamic" 
                     ValidationGroup="crear">
                     El valor ingresado debe ser un número
                 </asp:CompareValidator>
             </div>
             
             <div class="form-group">
-                <label for="txtStockMinimo" class="col-lg-2 control-label">
-                    <asp:Label ID="lblStockMinimo" runat="server" Text="Stock Mínimo"></asp:Label>
+                <label for="txtFechaIngreso" class="col-lg-2 control-label">
+                    <asp:Label ID="lblFechaIngreso" runat="server" Text="Fecha de Ingreso"></asp:Label>
                 </label>
                 <div class="col-lg-5">
-                     <asp:TextBox ID="txtStockMinimo" runat="server" ClientIDMode="Static" 
+                     <asp:TextBox ID="txtFechaIngreso" runat="server" ClientIDMode="Static" 
                          CssClass="form-control "></asp:TextBox>
-                    <asp:Label ID="showStockMinimo" CssClass="form-control" runat="server"></asp:Label>
+                    <asp:Label ID="showFechaIngreso" CssClass="form-control" runat="server"></asp:Label>
                 </div>
-                <asp:RequiredFieldValidator ID="rfdStockMinimo" runat="server" 
-                    ControlToValidate="txtStockMinimo" 
-                    ErrorMessage="El campo Unidad de Medida es obligatorio" 
+                <asp:RequiredFieldValidator ID="rfvFechaIngreso" runat="server" 
+                    ControlToValidate="txtFechaIngreso" 
                     CssClass="col-lg-4 form-control-static text-danger" Display="Dynamic" 
                     ValidationGroup="crear">
                         Este campo es obligatorio 
                 </asp:RequiredFieldValidator>
-                <asp:CompareValidator ID="cmpStockMinimo" runat="server" 
-                    ControlToValidate="txtStockMinimo" 
+                <asp:CompareValidator ID="cmpFechaIngreso" runat="server" 
+                    ControlToValidate="txtFechaIngreso" 
                     CssClass="col-lg-4 form-control-static text-danger" Display="Dynamic" 
-                    Operator="DataTypeCheck" Type="Double" ValidationGroup="crear">
+                    Operator="DataTypeCheck" Type="DateTime" ValidationGroup="crear">
                     El valor ingresado debe ser un número
                 </asp:CompareValidator>
             </div>
@@ -132,7 +128,7 @@
             <div class="form-group">
                 <div class="col-lg-9">
                     <asp:Button ID="btnNuevo" CssClass="btn btn-primary" runat="server" 
-                        Text="Nuevo Material" onclick="btnNuevo_Click" CausesValidation="False"/>                        
+                        Text="Nuevo Empleado" onclick="btnNuevo_Click" CausesValidation="False"/>                        
                     <asp:Button ID="btnCrear" CssClass="btn btn-primary" runat="server" 
                         Text="Crear" onclick="btnCrear_Click" ValidationGroup="crear" 
                         Visible="False" />

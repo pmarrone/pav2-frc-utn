@@ -9,14 +9,14 @@ namespace PatriaFabricaMuebles.Entidades
     {
         #region -- Atributos --
 
-        int idTipoMueble;
+        int? idTipoMueble;
         string descrip;
         
         #endregion
 
         #region -- Propiedades --
         
-        public int IdTipoMueble
+        public int? IdTipoMueble
         {
             get { return idTipoMueble; }
             set { idTipoMueble = value; }

@@ -17,7 +17,7 @@ namespace PatriaFabricaMuebles.Entidades
 
         #region -- Propiedades --
 
-        public Material IdMaterial
+        public Material Material
         {
             get { return idMaterial; }
             set { idMaterial = value; }
