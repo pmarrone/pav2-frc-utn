@@ -10,12 +10,12 @@ namespace PatriaFabricaMuebles.Entidades
 
         #region -- Atributos --
 
-        int legajo;
-        int nroDoc;
-        DateTime fechaNac; 
-        DateTime fechaAlta; 
-        DateTime fechaBaja;
-        string apellido; 
+        Int64? legajo;
+        Int64? dni;
+        DateTime? fechaNac;
+        DateTime? fechaAlta;
+        DateTime? fechaBaja;
+        string apellido;
         String nombre;
         Usuario usuario;
 
@@ -23,30 +23,30 @@ namespace PatriaFabricaMuebles.Entidades
 
         #region -- Propiedades --
 
-        public int Legajo
+        public Int64? Legajo
         {
             get { return legajo; }
             set { legajo = value; }
         }
 
-        public int NroDoc
+        public Int64? Dni
         {
-            get { return nroDoc; }
-            set { nroDoc = value; }
+            get { return dni; }
+            set { dni = value; }
         }
-        public DateTime FechaBaja
+        public DateTime? FechaBaja
         {
             get { return fechaBaja; }
             set { fechaBaja = value; }
         }
 
-        public DateTime FechaAlta
+        public DateTime? FechaAlta
         {
             get { return fechaAlta; }
             set { fechaAlta = value; }
         }
 
-        public DateTime FechaNac
+        public DateTime? FechaNac
         {
             get { return fechaNac; }
             set { fechaNac = value; }
