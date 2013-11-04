@@ -9,23 +9,23 @@ namespace PatriaFabricaMuebles.Entidades
     {
         #region -- Atributos --
 
-        int idRol;
-        string descrip;
+        int id_rol;
+        string descripcion;
 
         #endregion
 
         #region -- Propiedades --
 
-        public int IdRol
+        public int Id_rol
         {
-            get { return idRol; }
-            set { idRol = value; }
+            get { return id_rol; }
+            set { id_rol = value; }
         }
 
-        public string Descrip
+        public string Descripcion
         {
-            get { return descrip; }
-            set { descrip = value; }
+            get { return descripcion; }
+            set { descripcion = value; }
         }
 
         #endregion
@@ -36,8 +36,8 @@ namespace PatriaFabricaMuebles.Entidades
 
         public Rol(int pidRol, string pdescrip)
         {
-            idRol = pidRol;
-            descrip = pdescrip;
+            id_rol = pidRol;
+            descripcion = pdescrip;
         }
 
         #endregion
