@@ -2,7 +2,7 @@
 using System.Data;
 using System.Text;
 using System.Data.Common;
-using System.Data;
+
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Collections.Generic;
@@ -34,8 +34,8 @@ namespace PatriaFabricaMuebles.DAO
                 cmd.Connection = connection;
                 cmd.CommandType = CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@id_rol", pRol.IdRol);
-                cmd.Parameters.AddWithValue("@descripcion", pRol.Descrip);        
+                cmd.Parameters.AddWithValue("@id_rol", pRol.Id_rol);
+                cmd.Parameters.AddWithValue("@descripcion", pRol.Descripcion);
 
 
                 connection.Open();
@@ -77,8 +77,8 @@ namespace PatriaFabricaMuebles.DAO
                 cmd.Connection = connection;
                 cmd.CommandType = CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@id_rol", pRol.IdRol);
-                cmd.Parameters.AddWithValue("@descripcion", pRol.Descrip);  
+                cmd.Parameters.AddWithValue("@id_rol", pRol.Id_rol);
+                cmd.Parameters.AddWithValue("@descripcion", pRol.Descripcion);
 
 
                 connection.Open();
@@ -120,8 +120,9 @@ namespace PatriaFabricaMuebles.DAO
                 cmd.Connection = connection;
                 cmd.CommandType = CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@id_rol", pRol.IdRol);
-              
+                cmd.Parameters.AddWithValue("@id_rol", pRol.Id_rol);
+
+
                 connection.Open();
                 cmd.ExecuteNonQuery();
 
@@ -163,9 +164,10 @@ namespace PatriaFabricaMuebles.DAO
                 while (reader.Read())
                 {
                     Rol oRol = new Rol();
-                    oRol.IdRol = (Int32)reader["id_rol"];
-                    oRol.Descrip = (String)reader["descripcion"];
-                 
+                    oRol.Id_rol = (Int32)reader["id_rol"];
+                    oRol.Descripcion = (String)reader["descripcion"];
+
+
                     roles.Add(oRol);
                 }
 
@@ -200,7 +202,8 @@ namespace PatriaFabricaMuebles.DAO
                 cmd.Connection = connection;
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@id_rol", id);
-      
+
+
 
                 connection.Open();
                 reader = cmd.ExecuteReader();
@@ -209,8 +212,8 @@ namespace PatriaFabricaMuebles.DAO
                 if (reader.Read())
                 {
                     Rol = new Rol();
-                    Rol.IdRol = (Int32)reader["id_rol"];
-                    Rol.Descrip = (String)reader["descripcion"];             
+                    Rol.Id_rol = (Int32)reader["id_rol"];
+                    Rol.Descripcion = (String)reader["descripcion"];
                 }
                 return Rol;
             }
