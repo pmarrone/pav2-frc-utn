@@ -6,5 +6,6 @@
     <siteMapNode url="~/Account/Register.aspx" title="Registro"  description="Registro" roles="*"/>
     <siteMapNode url="Material.aspx" title="Material"  description="Material" roles="administradores"/>
     <siteMapNode url="Mueble.aspx" title="Mueble"  description="Mueble" roles="administradores, empleados"/>
+    <siteMapNode url="Empleado.aspx" title="Empleado"  description="Empleado" roles="administradores"/>
   </siteMapNode>
 </siteMap>
