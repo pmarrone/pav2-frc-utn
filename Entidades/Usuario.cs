@@ -7,40 +7,60 @@ namespace PatriaFabricaMuebles.Entidades
 {
     public class Usuario
     {
-#region -- Atributos --
+        #region -- Atributos --
 
-        int idUsuario;
-        int idRol;
+        string id_usuario;
+        Int64 id_rol;
+        string hashed_password;
+        Int64? id_cliente;
+        Int64? legajo;
+        #endregion
 
-#endregion
+        #region -- Propiedades --
 
-#region -- Propiedades --
-
-        public int IdUsuario
+        public string Id_usuario
         {
-            get { return idUsuario; }
-            set { idUsuario = value; }
+            get { return id_usuario; }
+            set { id_usuario = value; }
         }
 
-        public int IdRol
+        public Int64 Id_rol
         {
-            get { return idRol; }
-            set { idRol = value; }
+            get { return id_rol; }
+            set { id_rol = value; }
         }
-#endregion
 
-#region -- Constructores --
+        public string Hashed_password
+        {
+            get { return hashed_password; }
+            set { hashed_password = value; }
+        }
+
+        public Int64? Id_cliente
+        {
+            get { return id_cliente; }
+            set { id_cliente = value; }
+        }
+
+        public Int64? Legajo
+        {
+            get { return legajo; }
+            set { legajo = value; }
+        }
+        #endregion
+
+        #region -- Constructores --
 
         public Usuario()
         { }
 
-        public Usuario(int pidUsuario, int pidRol)
+        public Usuario(string id_usuario, Int64 id_rol)
         {
-            idUsuario = pidUsuario;
-            idRol = pidRol;
+            this.id_usuario = id_usuario;
+            this.id_rol = id_rol;
         }
 
-#endregion
+        #endregion
 
 
     }
